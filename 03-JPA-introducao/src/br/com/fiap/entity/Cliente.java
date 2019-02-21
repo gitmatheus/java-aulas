@@ -43,14 +43,14 @@ public class Cliente {
 	@Enumerated(EnumType.STRING)
 	private Genero genero;
 	
-	@Column(name = "dt_cadastro",updatable = false ,nullable = false)
+	@Column(name = "dt_cadastro",updatable = false)
 	@Temporal(TemporalType.DATE)
 	@CreationTimestamp
 	private Calendar dataCadastro;
 	
 	@Lob
 	@Column(name = "fl_foto")
-	private byte foto;
+	private byte[] foto;
 	
 	@Column(name = "st_vip")
 	private boolean vip;
@@ -65,7 +65,7 @@ public class Cliente {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Cliente(String nome, Calendar dataNascimento, String cpf, Genero genero, byte foto, boolean vip) {
+	public Cliente(String nome, Calendar dataNascimento, String cpf, Genero genero, byte[] foto, boolean vip) {
 		super();
 		this.nome = nome;
 		this.dataNascimento = dataNascimento;
@@ -78,7 +78,7 @@ public class Cliente {
 	
 	
 
-	public Cliente(int codigo, String nome, Calendar dataNascimento, String cpf, Genero genero, byte foto,
+	public Cliente(int codigo, String nome, Calendar dataNascimento, String cpf, Genero genero, byte[] foto,
 			boolean vip) {
 		super();
 		this.codigo = codigo;
@@ -138,11 +138,11 @@ public class Cliente {
 		this.dataCadastro = dataCadastro;
 	}
 
-	public byte getFoto() {
+	public byte[] getFoto() {
 		return foto;
 	}
 
-	public void setFoto(byte foto) {
+	public void setFoto(byte[] foto) {
 		this.foto = foto;
 	}
 
