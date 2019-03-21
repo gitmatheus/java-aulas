@@ -22,6 +22,29 @@ public class Gerente {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "gerente")
 	private int codigo;
 	
+	
+	public Gerente(int codigo, Departamento departamento, String nome, Nivel nivel) {
+		super();
+		this.codigo = codigo;
+		this.departamento = departamento;
+		this.nome = nome;
+		this.nivel = nivel;
+	}
+	
+	public Gerente(String nome, Nivel nivel) {
+		super();
+		
+		
+		this.nome = nome;
+		this.nivel = nivel;
+	}
+
+	public Gerente() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	//mappedBy atributo que mapeia a FK na classe departamento
 	@OneToOne(mappedBy = "gerente")
 	private Departamento departamento;
 	
@@ -32,6 +55,40 @@ public class Gerente {
 	@Enumerated(EnumType.STRING)
 	@Column(name = "ds_nivel")
 	private Nivel nivel;
+
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+
+	public Departamento getDepartamento() {
+		return departamento;
+	}
+
+	public void setDepartamento(Departamento departamento) {
+		this.departamento = departamento;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public Nivel getNivel() {
+		return nivel;
+	}
+
+	public void setNivel(Nivel nivel) {
+		this.nivel = nivel;
+	}
+	
+	
 	
 	
 }
