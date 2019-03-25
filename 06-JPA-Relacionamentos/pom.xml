@@ -16,7 +16,6 @@
       </plugin>
     </plugins>
   </build>
-  
   <dependencies>
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -30,14 +29,11 @@
 			<scope>system</scope>
 			<systemPath>E:/FIAP-TDS/2ANO/java/ojdbc8.jar</systemPath>
 		</dependency>
-
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<version>1.4.197</version>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
-  
 </project>

@@ -3,17 +3,16 @@ package br.com.fiap.dao;
 import br.com.fiap.exception.CodigoInexistenteException;
 import br.com.fiap.exception.CommitException;
 
-public interface GenericDAO<Tabela, Chave> {
+public interface GenericDAO<T,K> {
+
+	void cadastrar(T entidade);
 	
+	void atualizar(T entidade);
 	
-	void cadastrar (Tabela entidade);
+	void excluir(K codigo) throws CodigoInexistenteException;
 	
-	void atualizar (Tabela entidade);
-	
-	void excluir(Chave id) throws CodigoInexistenteException;
-	
-	Tabela pesquisar(Chave id) throws CodigoInexistenteException;
+	T pesquisar(K codigo) throws CodigoInexistenteException;
 	
 	void commit() throws CommitException;
-
+	
 }

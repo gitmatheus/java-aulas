@@ -12,49 +12,35 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name= "T_GERENTE")
-@SequenceGenerator(name = "gerente",sequenceName = "SQ_T_GERENTE", allocationSize = 1)
+@Table(name = "T_GERENTE")
+@SequenceGenerator(name = "gerente", sequenceName = "SQ_T_GERENTE", allocationSize = 1)
 public class Gerente {
 
-	
 	@Id
 	@Column(name = "cd_gerente")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "gerente")
 	private int codigo;
 	
-	
-	public Gerente(int codigo, Departamento departamento, String nome, Nivel nivel) {
-		super();
-		this.codigo = codigo;
-		this.departamento = departamento;
-		this.nome = nome;
-		this.nivel = nivel;
-	}
-	
-	public Gerente(String nome, Nivel nivel) {
-		super();
-		
-		
-		this.nome = nome;
-		this.nivel = nivel;
-	}
+	//mappedBy atributo que mapeia a FK na classe departamento
+	@OneToOne(mappedBy="gerente")
+	private Departamento departamento;
+
+	@Column(name = "nm_gerente", nullable = false, length = 50)
+	private String nome;
+
+	@Enumerated(EnumType.STRING)
+	@Column(name="ds_nivel")
+	private Nivel nivel;
 
 	public Gerente() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	//mappedBy atributo que mapeia a FK na classe departamento
-	@OneToOne(mappedBy = "gerente")
-	private Departamento departamento;
-	
-	
-	@Column(name = "nm_gerente", nullable = false)
-	private String nome;
-	
-	@Enumerated(EnumType.STRING)
-	@Column(name = "ds_nivel")
-	private Nivel nivel;
+	public Gerente(String nome, Nivel nivel) {
+		super();
+		this.nome = nome;
+		this.nivel = nivel;
+	}
 
 	public int getCodigo() {
 		return codigo;
@@ -87,8 +73,5 @@ public class Gerente {
 	public void setNivel(Nivel nivel) {
 		this.nivel = nivel;
 	}
-	
-	
-	
-	
+
 }

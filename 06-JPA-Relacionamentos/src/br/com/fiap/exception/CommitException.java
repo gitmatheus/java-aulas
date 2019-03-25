@@ -26,7 +26,5 @@ public class CommitException extends Exception {
 		super(cause);
 		// TODO Auto-generated constructor stub
 	}
-	
-	
 
 }
