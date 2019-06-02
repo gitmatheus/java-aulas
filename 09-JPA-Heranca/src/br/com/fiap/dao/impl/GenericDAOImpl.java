@@ -1,8 +1,10 @@
 package br.com.fiap.dao.impl;
 
-
+import java.awt.color.CMMException;
 import java.lang.reflect.ParameterizedType;
+
 import javax.persistence.EntityManager;
+
 import br.com.fiap.dao.GenericDAO;
 import br.com.fiap.exception.CodigoInexistenteException;
 import br.com.fiap.exception.CommitException;
