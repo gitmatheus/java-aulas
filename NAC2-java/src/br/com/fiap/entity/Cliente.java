@@ -50,6 +50,14 @@ public class Cliente {
 		this.genero = genero;
 		this.dtNascimento = dtNascimento;
 	}
+	
+	public Cliente(String nome, Genero genero, Calendar dtNascimento) {
+		super();
+		
+		this.nome = nome;
+		this.genero = genero;
+		this.dtNascimento = dtNascimento;
+	}
 
 	public Cliente() {
 		super();

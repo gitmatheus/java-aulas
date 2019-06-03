@@ -27,11 +27,12 @@ public class Locacao {
 	@Column(name="cd_locacao")
 	private int codigo;
 	
-	
+	@Id
 	@ManyToOne 
 	@JoinColumn(name="cd_cliente") 
 	private Cliente cliente;
 	
+	@Id
 	@ManyToOne 
 	@JoinColumn(name="cd_imovel") 
 	private Imovel imovel;
@@ -50,6 +51,14 @@ public class Locacao {
 	public Locacao(int codigo, Cliente cliente, Imovel imovel, Calendar dataLocacao, Double valor) {
 		super();
 		this.codigo = codigo;
+		this.cliente = cliente;
+		this.imovel = imovel;
+		this.dataLocacao = dataLocacao;
+		this.valor = valor;
+	}
+	
+	public Locacao(Cliente cliente, Imovel imovel, Calendar dataLocacao, Double valor) {
+		super();
 		this.cliente = cliente;
 		this.imovel = imovel;
 		this.dataLocacao = dataLocacao;

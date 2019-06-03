@@ -53,6 +53,30 @@ public class Imovel {
 		this.detalhes = detalhes;
 	}
 
+	
+	
+	
+	public Imovel(int codigo, byte[] foto, String detalhes, List<Locacao> locacoes, String logradouro, int cep) {
+		super();
+		this.codigo = codigo;
+		this.foto = foto;
+		this.detalhes = detalhes;
+		this.locacoes = locacoes;
+		this.logradouro = logradouro;
+		this.cep = cep;
+	}
+	public Imovel( byte[] foto, String detalhes, String logradouro, int cep) {
+		super();
+		
+		this.foto = foto;
+		this.detalhes = detalhes;
+		
+		this.logradouro = logradouro;
+		this.cep = cep;
+	}
+
+
+
 
 	public Imovel() {
 		super();

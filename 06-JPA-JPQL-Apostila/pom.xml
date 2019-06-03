@@ -20,7 +20,7 @@
 	</build>
 	<dependencies>
 		<dependency>
-			<groupId>oracle</groupId>
+			<groupId>oracle</groupId> 
 			<artifactId>jdbc-driver</artifactId>
 			<version>12</version>
 			<scope>system</scope>

@@ -10,7 +10,7 @@ public class LocacaoPK implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	
-	private int cod;
+	private int codigo;
 	
 	private int imovel;
 	
@@ -23,20 +23,20 @@ public class LocacaoPK implements Serializable{
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public LocacaoPK(int cod, int imovel, int cliente) {
+	public LocacaoPK(int codigo, int imovel, int cliente) {
 		super();
-		this.cod = cod;
+		this.codigo = codigo;
 		this.imovel = imovel;
 		this.cliente = cliente;
 	}
 
 
-	public int getCod() {
-		return cod;
+	public int getCodigo() {
+		return codigo;
 	}
 
-	public void setCod(int cod) {
-		this.cod = cod;
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
 	}
 
 	public int getImovel() {
@@ -62,7 +62,7 @@ public class LocacaoPK implements Serializable{
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + cliente;
-		result = prime * result + cod;
+		result = prime * result + codigo;
 		result = prime * result + imovel;
 		return result;
 	}
@@ -77,7 +77,7 @@ public class LocacaoPK implements Serializable{
 		LocacaoPK other = (LocacaoPK) obj;
 		if (cliente != other.cliente)
 			return false;
-		if (cod != other.cod)
+		if (codigo != other.codigo)
 			return false;
 		if (imovel != other.imovel)
 			return false;
